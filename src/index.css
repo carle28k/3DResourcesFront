@@ -1,0 +1,58 @@
+*{
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Roboto, system-ui;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(156, 156, 156);
+  height: 50px;
+}
+
+main {
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(156, 156, 156);
+    height: 50px;
+}
+
+
+/* ===========================
+            768px
+================================*/
+
+@media screen and (max-width:768px) {
+
+main {
+  max-width: 100%;
+  padding: 1rem;
+}
+  
+}/*768px*/
+
+
+/* ===========================
+          992px
+================================*/
+
+@media screen and (min-width:992px) {
+  
+  
+}/*992px*/

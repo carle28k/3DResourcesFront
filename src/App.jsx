@@ -1,34 +1,25 @@
 
-import { Navigate, Route, Routes } from 'react-router-dom'
-
-/* Importación extandar de rutas */
-/* import { DetailPage } from './publicViews/pages/DetailPage'
-import { HomePage } from './publicViews/pages/HomePage'
-import { SearchPage } from './publicViews/pages/SearchPage'  */
-
-
+import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import {ProtectedPage } from './admin/pages'
-
-
 import { NavBar } from './ui/components'
 import { AppRouters } from './routers/AppRouters'
-
+import LogoCEB from './assets/LogosWeb/LogoCEB.png'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <header>
-        <p>Esto es el header</p>
-      </header>
+      <header className="header">
+        <Link to="/" className="logo-container">
+          <img className="logoHeader" src={LogoCEB} alt="Logo" />
+        </Link>
 
-      <nav>
         <NavBar />
-      </nav>
+      </header>
+      
 
       <main>
-
         
           <AppRouters />
           
