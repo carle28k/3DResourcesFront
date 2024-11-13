@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <header className="header">
-        <Link to="/" className="logo-container">
+        <Link to="/" className="logoContainer">
           <img className="logoHeader" src={LogoCEB} alt="Logo" />
         </Link>
 
@@ -19,7 +19,7 @@ function App() {
       </header>
       
 
-      <main>
+      <main className='mainContent'>
         
           <AppRouters />
           

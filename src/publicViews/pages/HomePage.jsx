@@ -13,7 +13,7 @@ export const HomePage = () => {
           <p>Explora programas, hardware ..... para producción 3D y VFX.</p>
         </div>
         <div className='gridImage'>
-          <img className="imagen" src={RendersCombined} alt="Logo" />
+          <img src={RendersCombined} alt="Renders Combiandos" />
         </div>
         
       </div>

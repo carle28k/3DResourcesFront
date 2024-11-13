@@ -1,0 +1,60 @@
+.softwareCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 15px;
+    text-align: left;
+ /*    width: 300px; Ancho bloqueado a 300px */
+    width: 100%
+  }
+
+  .cardLogo {
+    max-height: 50px;
+    margin-left: -6px;
+    width: 50px
+    
+  }
+
+  .imgLogo {
+    width: auto;
+    height: 100%;
+  }
+
+  .cardTitle {
+    text-transform: uppercase;
+    font-family: Roboto light;
+    margin-bottom: 10px;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .cardTags {
+    display: flex;
+    gap: 5px; /* Espacio entre etiquetas */
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+
+  .tag {
+    padding: 2px 5px;
+    border: 1px solid #2B2B2B;
+    border-radius: 10px;
+  }
+
+
+  .cardButton {
+    background-color: #2B2B2B;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .cardButton:hover {
+    background-color: #5c5c5c;
+  }

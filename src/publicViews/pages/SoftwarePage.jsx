@@ -1,19 +1,23 @@
 import { GridSearch } from "../../components/GridSearch"
 
+
+import './softwarePage.css'
+
 export const SoftwarePage = () => {
   return (
     <>
-      <div className="">
+        <div className="softwareContainer"> 
+          <div className="formContainer">
             <form>
                 <input
                     type="text"
-                    className="form-control"
+                    className="formControl"
                     id="search-text"
                     placeholder="búsqueda..."
                 />
                 <div >
                 <label>Categoría</label>
-                <select id="category" className="form-select">
+                <select id="category" className="formSelect">
                     <option value="software">Software</option>
                     <option value="hardware">Hardware</option>
                     <option value="resources">Recursos</option>
@@ -37,9 +41,10 @@ export const SoftwarePage = () => {
             </form>
         </div>
 
-        <div>
+        <div className="gridContainer">
           <GridSearch />
         </div>
+      </div> 
     </>
   )
 }
