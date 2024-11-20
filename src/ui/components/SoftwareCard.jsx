@@ -3,8 +3,9 @@ import React from 'react'
 import MayaLogo from '../../assets/LogosSoftware/MayaLogo.png'
 
 import './softwareCard.css'
+import { Link } from 'react-router-dom';
 
-export const SoftwareCard = ({title, description_short, logo, tags}) => {
+export const SoftwareCard = ({software_id, title, description_short, logo, tags}) => {
   
   const ShowTags = tags.slice(0, 3);
   const TagsCount = tags.length - 3;
@@ -12,7 +13,7 @@ export const SoftwareCard = ({title, description_short, logo, tags}) => {
 
   return (
     <>
-        <section className="softwareCard">
+        <article className="softwareCard">
           
             {/* <div className="card-logo">
               <img src={logo} alt={`${title} logo`} />
@@ -33,13 +34,18 @@ export const SoftwareCard = ({title, description_short, logo, tags}) => {
                 <span className="tagPlus">+{TagsCount}</span>
               )}
             </div>
-
-
-
+            
             <div>
-            <button className="cardButton">Ver más</button>
+              <Link to={`/software/${software_id}`} className='cardButton'>
+                Ver más
+              </Link>
             </div>
-        </section>
+            
+            {/* <div>
+            <button className="cardButton">Ver más</button>
+            </div> */}
+            
+        </article>
 
     </>
   )

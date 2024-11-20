@@ -13,7 +13,7 @@ export const NavBar = () => {
 
         <li>
           <NavLink
-            to={`/software`}
+            to={`/softwares`}
             className={({ isActive }) => isActive ? 'navLoaded' : ''}>
             Software
           </NavLink>

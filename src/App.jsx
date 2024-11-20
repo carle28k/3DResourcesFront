@@ -1,35 +1,42 @@
 
-import { Link, Navigate, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, NavLink, Route, Routes } from 'react-router-dom'
 import {ProtectedPage } from './admin/pages'
-import { NavBar } from './ui/components'
+import { Footer, NavBar } from './ui/components'
 import { AppRouters } from './routers/AppRouters'
 import LogoCEB from './assets/LogosWeb/LogoCEB.png'
 import './App.css'
+import { UserProvider } from './context/UserContext'
+
 
 function App() {
+  
+
 
   return (
     <>
-      <header className="header">
-        <Link to="/" className="logoContainer">
-          <img className="logoHeader" src={LogoCEB} alt="Logo" />
-        </Link>
+      <UserProvider>
+        <header className="header">
+          <Link to="/" className="logoContainer">
+            <img className="logoHeader" src={LogoCEB} alt="Logo" />
+          </Link>
 
-        <NavBar />
-      </header>
-      
-
-      <main className='mainContent'>
+          <NavBar />
+        </header>
         
-          <AppRouters />
+
+        <main className='mainContent'>
           
-       
+            <AppRouters />
+            
+        
+        
+        </main>
       
-      </main>
-    
-      <footer>
-        <p>Esto es el footer</p>
-      </footer>
+        <footer>
+          <Footer />
+
+        </footer>
+      </UserProvider>
     </>
   )
 }

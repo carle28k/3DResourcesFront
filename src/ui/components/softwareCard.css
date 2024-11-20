@@ -53,6 +53,7 @@
     padding: 5px;
     cursor: pointer;
     font-size: 0.8rem;
+    text-decoration: none;
   }
   
   .cardButton:hover {

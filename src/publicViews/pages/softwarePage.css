@@ -9,3 +9,39 @@
     box-sizing: border-box;
 }
 
+
+.searchBar {
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 0.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Espacio entre etiquetas */
+    margin-bottom: 20px;
+}
+
+.tagButton {
+    padding: 2px 5px;
+    border: 1px solid #2B2B2B;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  .tagButton.active {
+    background-color: #5c5c5c;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .tagButton:hover {
+    background-color: #5c5c5c;
+    color: white;
+  }

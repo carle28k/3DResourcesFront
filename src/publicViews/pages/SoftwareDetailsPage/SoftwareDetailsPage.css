@@ -1,0 +1,29 @@
+
+
+.postHeader{
+    margin-top: 10px;
+}
+.postTitle{
+    text-transform: uppercase;
+    font-family: Roboto thin;
+    font-size: 3.5rem;
+}
+
+.postCompany{
+    font-family: Roboto Light;
+    font-size: 0.8rem;
+}
+
+
+
+.postDescriptionText{
+    white-space: pre-line;
+}
+
+.postProfilesText,
+.postCombinedText,
+.postRelatedText {
+    text-transform: uppercase;
+    font-family: Roboto Light;
+    font-size: 1rem;
+}

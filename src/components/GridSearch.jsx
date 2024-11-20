@@ -1,12 +1,23 @@
 import React from 'react'
 import { SoftwareCard } from '../ui/components/SoftwareCard'
-
+/* import { useFetch } from '../hooks/useFetch' */
 
 import './gridSearch.css'
+import { useFetch } from '../hooks/useFetch'
+import { useParams } from 'react-router-dom'
 
-export const GridSearch = ({category}) => {
 
+export const GridSearch = ({busqueda}) => {
 
+  const {p}= useParams()
+  const page = !p ? 0 : p
+  const endpoint=`softwares`
+
+  const {softwares, isLoading, errors}=useFetch(endpoint)
+  /* console.log (softwares) */
+  const {ok, msg, result}=softwares
+
+/* const { softwares: dataFech, isLoading} = useFetch(busqueda) */
 
 const arrayCardRecursosTemp=[
     {
@@ -47,6 +58,29 @@ const arrayCardRecursosTemp=[
   return (
     <>
       <div className='grid-container'>
+          {
+            errors 
+              ?
+                <p>${erorrs}</p>
+              :
+                (
+                  isLoading 
+                    ? 
+                      <h3>CARGANDO</h3>
+                    :
+                      result.map((result)=>(
+                        <SoftwareCard 
+                          key={result.software_id}
+                          {...result}
+                        /> 
+                      )
+                )            
+            )
+          }
+        </div>
+    </>
+   /*  <>
+      <div className='grid-container'>
         {arrayCardRecursosTemp.map((software)=>
             <SoftwareCard 
               key={software.id}
@@ -59,7 +93,7 @@ const arrayCardRecursosTemp=[
         }
         
       </div>
-    </>
+    </> */
   )
 }
 
