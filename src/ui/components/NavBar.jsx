@@ -14,14 +14,14 @@ export const NavBar = () => {
         <li>
           <NavLink
             to={`/softwares`}
-            className={({ isActive }) => isActive ? 'navLoaded' : ''}>
+            className={({ isActive }) => isActive ? 'navLoaded' : 'navNotLoaded'}>
             Software
           </NavLink>
         </li>
         <li>
           <NavLink
             to={`/hardware`}
-            className={({ isActive }) => isActive ? 'navLoaded' : ''}>
+            className={({ isActive }) => isActive ? 'navLoaded' : 'navNotLoaded'}>
             Hardware
           </NavLink>
         </li>

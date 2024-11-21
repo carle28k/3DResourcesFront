@@ -14,10 +14,62 @@
     font-size: 0.8rem;
 }
 
+.postLinksTags{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.postLink{
+    color: black;
+    font-family: Roboto;
+    font-size: 0.85rem;
+}
+
+.postMainImgContainer{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    background-color: brown;
+}
+
+
+.postLogoImage{
+    position: absolute;
+  bottom: 10px;
+  right: 10px;
+  max-width: 100px;
+  height: auto;
+  padding: 5px;
+}
+
+
+.postDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: Roboto Light;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
 
 
 .postDescriptionText{
     white-space: pre-line;
+    font-family: Roboto Light;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.postCreator{
+    font-family: Roboto Light;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 .postProfilesText,
@@ -26,4 +78,5 @@
     text-transform: uppercase;
     font-family: Roboto Light;
     font-size: 1rem;
+    margin-top: 20px;
 }

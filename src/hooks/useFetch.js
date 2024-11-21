@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { apiRest } from "../api/apiRest"
 
 
-export const useFetch = (endpoint, method = "GET", body = {}) => {
+export const useFetch = (endpoint="", method = "GET", body = {}) => {
 
   const [softwares, setSoftwares] = useState([])
   //Mensaje de CARGANDO
@@ -11,11 +11,12 @@ export const useFetch = (endpoint, method = "GET", body = {}) => {
   const [errors, setErrors] = useState(null)
 
 
-  const getApi = async()=>{
+  const getApi = async(customEndpoint = endpoint, customMethod = method, customBody = body)=>{
     try {
-      const resp = await apiRest(endpoint, method, body)
+      const resp = await apiRest(customEndpoint, customMethod, customBody)
       /* CONSOLE de respuesta */
-      /* console.log({resp}) */
+      /* console.log({resp}) */ 
+      console.log(customBody,"En getApi")
       setSoftwares(resp)
       setIsLoading(false)
       setErrors(null)
@@ -34,7 +35,8 @@ export const useFetch = (endpoint, method = "GET", body = {}) => {
   return {
     softwares,
     isLoading,
-    errors
+    errors,
+    getApi
   }
     
 }

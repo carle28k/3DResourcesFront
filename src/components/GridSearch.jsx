@@ -1,21 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { SoftwareCard } from '../ui/components/SoftwareCard'
-/* import { useFetch } from '../hooks/useFetch' */
 
 import './gridSearch.css'
 import { useFetch } from '../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 
 
-export const GridSearch = ({busqueda}) => {
+export const GridSearch = ({ searchText, activeTags }) => {
+  const [estadoSearchText, setEstadoSearchText] = useState(searchText);
+  const [estadoActiveTags, setEstadoActiveTags] = useState(activeTags);
+
+
+  console.log("carga componete GridSearch")
+  /* Seteamos el valor inicial de endpoint con "softwares" */
+  const [endpoint, setEndpoint] = useState("softwares")
+
+  /* Si recibimos cambios en la búsqueda o sus tags actualizamos la url */
+  useEffect(()=>{
+    console.log("carga componete GridSearch en useEffect")
+    /*"URLSearchParams" es un objeto de JavaScrip que permite trabajr la cadena de una URL  */
+    const params = new URLSearchParams();
+    /* Si tenemos búsqueda, lo añadimos a la ruta */
+    if (estadoSearchText) params.append("search", estadoSearchText);
+    /* Si tenemos tags, lo añadimos a la ruta */
+    if (estadoActiveTags.length > 0) params.append("tags", estadoActiveTags.join(","));
+
+    /* Actualizamos la url con el texto de busqueda o los tags */
+    setEndpoint(`softwares?${params.toString()}`)
+    console.log(`softwares?${params.toString()}`)
+
+    
+  },[estadoSearchText, estadoActiveTags])
 
   const {p}= useParams()
   const page = !p ? 0 : p
-  const endpoint=`softwares`
+  /* const endpoint=`softwares` */
 
   const {softwares, isLoading, errors}=useFetch(endpoint)
   /* console.log (softwares) */
-  const {ok, msg, result}=softwares
+  let {ok, msg, result}=softwares
 
 /* const { softwares: dataFech, isLoading} = useFetch(busqueda) */
 
